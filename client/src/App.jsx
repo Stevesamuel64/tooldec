@@ -12,29 +12,21 @@ function App() {
 
   return (
 
-<BrowserRouter>
+    <BrowserRouter>
 
-  <Navbar />
+      <Navbar />
 
-  <div className="pt-16">
+      <Routes>
 
-    <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/cart" element={<Cart />} />
+        <Route path="/product/:id" element={<ProductDetails />} />
+        <Route path="/upload-product" element={<UploadProduct />} />
 
-      <Route path="/" element={<Home />} />
+      </Routes>
 
-      <Route path="/about" element={<About />} />
-
-      <Route path="/cart" element={<Cart />} />
-
-      <Route path="/product/:id" element={<ProductDetails />} />
-
-      <Route path="/upload-product" element={<UploadProduct />} />
-
-    </Routes>
-
-  </div>
-
-</BrowserRouter>
+    </BrowserRouter>
 
   );
 

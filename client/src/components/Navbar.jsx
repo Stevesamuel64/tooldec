@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import logo from "../assets/logo.png";
-import Navbar from "./components/Navbar";
 
 function Navbar() {
 
@@ -9,113 +8,64 @@ function Navbar() {
 
   return (
 
-    <nav className="w-full bg-black text-white border-b border-gray-800 sticky top-0 z-50">
+    <nav className="w-full bg-black text-white sticky top-0 z-50">
 
-      <div className="max-w-7xl mx-auto flex items-center justify-between px-4 md:px-6 py-3">
+      <div className="max-w-7xl mx-auto flex items-center justify-between px-4 py-3">
 
-        <Link
-          to="/"
-          className="flex items-center gap-2"
-        >
+        <Link to="/" className="flex items-center gap-2">
 
           <img
             src={logo}
             alt="ToolDec"
-            className="h-8 md:h-10 w-auto object-contain rounded"
+            className="h-8 w-auto"
           />
 
-          <h1 className="text-lg md:text-2xl font-bold tracking-wide text-white">
-
+          <h1 className="text-lg md:text-2xl font-bold">
             TOOLDEC
-
           </h1>
 
         </Link>
 
-        {/* Desktop Menu */}
+        {/* Desktop */}
 
-        <ul className="hidden md:flex gap-8 text-sm uppercase font-semibold">
+        <div className="hidden md:flex gap-8">
 
-          <li>
-            <Link
-              to="/"
-              className="hover:text-gray-300 transition"
-            >
-              Home
-            </Link>
-          </li>
+          <Link to="/">Home</Link>
 
-          <li>
-            <a
-              href="https://wa.me/919999999999"
-              target="_blank"
-              rel="noreferrer"
-              className="hover:text-gray-300 transition"
-            >
-              Contact
-            </a>
-          </li>
+          <Link to="/about">About</Link>
 
-          <li>
-            <Link
-              to="/about"
-              className="hover:text-gray-300 transition"
-            >
-              About Us
-            </Link>
-          </li>
+          <Link to="/cart">Cart</Link>
 
-        </ul>
+        </div>
 
-        {/* Mobile Hamburger */}
+        {/* Mobile */}
 
         <button
           onClick={() => setMenuOpen(!menuOpen)}
-          className="md:hidden flex flex-col gap-1"
+          className="md:hidden"
         >
 
-          <span className="w-6 h-[2px] bg-white"></span>
-          <span className="w-6 h-[2px] bg-white"></span>
-          <span className="w-6 h-[2px] bg-white"></span>
+          ☰
 
         </button>
 
       </div>
 
-      {/* Mobile Menu */}
-
       {menuOpen && (
 
-        <div className="md:hidden bg-black border-t border-gray-800 px-4 py-5">
+        <div className="md:hidden bg-black px-4 pb-4 flex flex-col gap-4">
 
-          <div className="flex flex-col gap-5 text-sm uppercase font-semibold">
+          <Link to="/" onClick={() => setMenuOpen(false)}>
+            Home
+          </Link>
 
-            <Link
-              to="/"
-              onClick={() => setMenuOpen(false)}
-              className="hover:text-gray-300 transition"
-            >
-              Home
-            </Link>
+          <Link to="/about" onClick={() => setMenuOpen(false)}>
+            About
+          </Link>
 
-            <a
-              href="https://wa.me/919999999999"
-              target="_blank"
-              rel="noreferrer"
-              className="hover:text-gray-300 transition"
-            >
-              Contact
-            </a>
-
-            <Link
-              to="/about"
-              onClick={() => setMenuOpen(false)}
-              className="hover:text-gray-300 transition"
-            >
-              About Us
-            </Link>
-
-          </div>
+          <Link to="/cart" onClick={() => setMenuOpen(false)}>
+            Cart
+          </Link>
 
         </div>
 

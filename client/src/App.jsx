@@ -4,8 +4,6 @@ import Home from "./pages/Home";
 import Admin from "./pages/Admin";
 import ProductDetails from "./pages/ProductDetails";
 import Cart from "./pages/Cart";
-import Login from "./pages/Login";
-import Register from "./pages/Register";
 import ProtectedRoute from "./components/ProtectedRoute";
 import Orders from "./pages/Orders";
 import About from "./pages/About";
@@ -48,12 +46,6 @@ function App() {
         <Route path="/product/:id" element={<ProductDetails />} />
 
         <Route path="/about" element={<About />} />
-
-        
-
-        <Route path="/login" element={<Login />} />
-
-        <Route path="/register" element={<Register />} />
 
         <Route path="/orders" element={<Orders />} />
 

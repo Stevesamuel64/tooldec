@@ -67,7 +67,7 @@ router.post("/", async (req, res) => {
 
         };
 
-       // await transporter.sendMail(mailOptions);
+        await transporter.sendMail(mailOptions);
 
         res.status(201).json(order);
 

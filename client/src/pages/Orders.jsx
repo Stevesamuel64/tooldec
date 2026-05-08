@@ -16,7 +16,7 @@ function Orders() {
         try {
 
             const res = await axios.get(
-                "http://localhost:5000/api/orders"
+                "https://tooldec.onrender.com/api/orders"
             );
 
             setOrders(res.data);

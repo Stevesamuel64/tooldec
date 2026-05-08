@@ -1,11 +1,8 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import Home from "./pages/Home";
-import Admin from "./pages/Admin";
 import ProductDetails from "./pages/ProductDetails";
 import Cart from "./pages/Cart";
-import ProtectedRoute from "./components/ProtectedRoute";
-import Orders from "./pages/Orders";
 import About from "./pages/About";
 import UploadProduct from "./pages/UploadProduct";
 
@@ -17,37 +14,30 @@ function App() {
 
       <Routes>
 
-        <Route path="/" element={<Home />} />
-
         <Route
-          path="/admin"
-          element={
-           <ProtectedRoute>
-          <Admin />
-        </ProtectedRoute>
-        }
+          path="/"
+          element={<Home />}
         />
 
-<Route
-  path="/cart"
-  element={
-    <ProtectedRoute>
-      <Cart />
-    </ProtectedRoute>
-  }
-/>
+        <Route
+          path="/product/:id"
+          element={<ProductDetails />}
+        />
 
-<Route
-  path="/upload-product"
-  element={<UploadProduct />}
-/>
+        <Route
+          path="/cart"
+          element={<Cart />}
+        />
 
+        <Route
+          path="/about"
+          element={<About />}
+        />
 
-        <Route path="/product/:id" element={<ProductDetails />} />
-
-        <Route path="/about" element={<About />} />
-
-        <Route path="/orders" element={<Orders />} />
+        <Route
+          path="/upload-product"
+          element={<UploadProduct />}
+        />
 
       </Routes>
 

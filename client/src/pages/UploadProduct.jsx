@@ -57,7 +57,7 @@ function UploadProduct() {
 
             const res = await axios.post(
 
-                "https://api.cloudinary.com/v1_1/YOUR_CLOUD_NAME/image/upload",
+                "https://api.cloudinary.com/v1_1/ddmph9p0g/image/upload",
 
                 data
 

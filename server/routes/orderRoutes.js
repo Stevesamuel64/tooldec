@@ -9,7 +9,11 @@ const Order = require("../models/Order");
 
 const transporter = nodemailer.createTransport({
 
-    service: "gmail",
+    host: "smtp.gmail.com",
+
+    port: 587,
+
+    secure: false,
 
     auth: {
 
@@ -20,7 +24,6 @@ const transporter = nodemailer.createTransport({
     }
 
 });
-
 
 // CREATE INQUIRY
 router.post("/", async (req, res) => {

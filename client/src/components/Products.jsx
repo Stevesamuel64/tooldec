@@ -34,20 +34,20 @@ function Products() {
 
         <section
             id="products"
-            className="bg-white py-20"
+            className="bg-white py-14 md:py-20"
         >
 
-            <div className="max-w-7xl mx-auto px-6">
+            <div className="max-w-7xl mx-auto px-4 md:px-6">
 
-                <div className="mb-14">
+                <div className="mb-10 md:mb-14">
 
-                    <p className="text-gray-500 uppercase tracking-[4px] text-sm mb-3">
+                    <p className="text-gray-500 uppercase tracking-[4px] text-[11px] md:text-sm mb-3">
 
                         Product Catalog
 
                     </p>
 
-                    <h2 className="text-5xl font-bold text-black">
+                    <h2 className="text-3xl md:text-5xl font-bold text-black">
 
                         Featured Products
 
@@ -55,7 +55,7 @@ function Products() {
 
                 </div>
 
-                <div className="grid md:grid-cols-3 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
 
                     {products.map((product) => (
 
@@ -67,27 +67,33 @@ function Products() {
 
                             <img
                                 src={product.image}
-                                alt=""
-                                className="h-64 w-full object-cover"
+                                alt={product.name}
+                                className="h-52 md:h-64 w-full object-cover"
                             />
 
-                            <div className="p-6">
+                            <div className="p-5 md:p-6">
 
-                                <h3 className="text-2xl font-bold mb-3 text-black">
+                                <h3 className="text-xl md:text-2xl font-bold mb-3 text-black">
+
                                     {product.name}
+
                                 </h3>
 
-                                <p className="text-gray-500 mb-6 leading-relaxed">
+                                <p className="text-gray-500 mb-5 leading-relaxed text-sm md:text-base line-clamp-3">
+
                                     {product.description}
+
                                 </p>
 
-                                <div className="flex items-center justify-between">
+                                <div className="flex items-center justify-between gap-3">
 
-                                    <span className="text-black text-2xl font-bold">
+                                    <span className="text-black text-xl md:text-2xl font-bold">
+
                                         ₹{product.price}
+
                                     </span>
 
-                                    <button className="border border-gray-300 px-5 py-2 rounded-lg hover:bg-black hover:text-white transition">
+                                    <button className="border border-gray-300 px-4 md:px-5 py-2 rounded-lg hover:bg-black hover:text-white transition text-sm md:text-base">
 
                                         View
 

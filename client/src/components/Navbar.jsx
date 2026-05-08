@@ -5,34 +5,35 @@ function Navbar() {
 
   return (
 
-    <nav className="w-full bg-black text-white">
+    <nav className="w-full bg-black text-white border-b border-gray-800">
 
-      <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-5">
+      <div className="max-w-7xl mx-auto flex items-center justify-between px-4 md:px-6 py-3">
 
         <Link
-  to="/"
-  className="flex items-center gap-3"
->
+          to="/"
+          className="flex items-center gap-2"
+        >
 
-  <img
-    src={logo}
-    alt="ToolDec"
-    className="h-10 w-auto object-contain"
-  />
+          <img
+            src={logo}
+            alt="ToolDec"
+            className="h-8 md:h-10 w-auto object-contain rounded"
+          />
 
-  <h1 className="text-2xl font-bold tracking-wide text-White">
+          <h1 className="text-lg md:text-2xl font-bold tracking-wide text-white">
 
-    TOOLDEC
+            TOOLDEC
 
-  </h1>
+          </h1>
 
-</Link>
+        </Link>
+
         <ul className="hidden md:flex gap-8 text-sm uppercase font-semibold">
 
           <li>
             <Link
               to="/"
-              className="hover:text-yellow-400 transition"
+              className="hover:text-gray-300 transition"
             >
               Home
             </Link>
@@ -43,20 +44,20 @@ function Navbar() {
               href="https://wa.me/919999999999"
               target="_blank"
               rel="noreferrer"
-              className="hover:text-yellow-400 transition"
+              className="hover:text-gray-300 transition"
             >
               Contact
             </a>
           </li>
 
           <li>
-  <Link
-    to="/about"
-    className="hover:text-gray-500 transition"
-  >
-    About Us
-  </Link>
-</li>
+            <Link
+              to="/about"
+              className="hover:text-gray-300 transition"
+            >
+              About Us
+            </Link>
+          </li>
 
         </ul>
 

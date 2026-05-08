@@ -1,9 +1,11 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
+import Navbar from "./components/Navbar";
+
 import Home from "./pages/Home";
-import ProductDetails from "./pages/ProductDetails";
-import Cart from "./pages/Cart";
 import About from "./pages/About";
+import Cart from "./pages/Cart";
+import ProductDetails from "./pages/ProductDetails";
 import UploadProduct from "./pages/UploadProduct";
 
 function App() {
@@ -12,32 +14,19 @@ function App() {
 
     <BrowserRouter>
 
+      <Navbar />
+
       <Routes>
 
-        <Route
-          path="/"
-          element={<Home />}
-        />
+        <Route path="/" element={<Home />} />
 
-        <Route
-          path="/product/:id"
-          element={<ProductDetails />}
-        />
+        <Route path="/about" element={<About />} />
 
-        <Route
-          path="/cart"
-          element={<Cart />}
-        />
+        <Route path="/cart" element={<Cart />} />
 
-        <Route
-          path="/about"
-          element={<About />}
-        />
+        <Route path="/product/:id" element={<ProductDetails />} />
 
-        <Route
-          path="/upload-product"
-          element={<UploadProduct />}
-        />
+        <Route path="/upload-product" element={<UploadProduct />} />
 
       </Routes>
 

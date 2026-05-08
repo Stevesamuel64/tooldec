@@ -41,61 +41,82 @@ function ProductDetails() {
     if (!product) {
 
         return (
-            <div className="text-center py-20 text-3xl">
+
+            <div className="text-center py-20 text-2xl md:text-3xl">
+
                 Loading...
+
             </div>
+
         );
 
     }
 
     return (
 
-        <div className="min-h-screen bg-gray-100 py-20 px-6">
+        <div className="min-h-screen bg-gray-100 py-10 md:py-20 px-4 md:px-6">
 
             <div className="max-w-6xl mx-auto bg-white rounded-3xl shadow-xl overflow-hidden grid md:grid-cols-2">
 
                 <img
                     src={product.image}
-                    alt=""
-                    className="w-full h-full object-cover"
+                    alt={product.name}
+                    className="w-full h-72 md:h-full object-cover"
                 />
 
-                <div className="p-10 flex flex-col justify-center">
+                <div className="p-6 md:p-10 flex flex-col justify-center">
 
-                    <p className="text-yellow-500 font-bold uppercase mb-4">
+                    <p className="text-gray-500 font-semibold uppercase tracking-[3px] mb-4 text-sm">
+
                         {product.category}
+
                     </p>
 
-                    <h1 className="text-5xl font-bold mb-6">
+                    <h1 className="text-3xl md:text-5xl font-bold mb-6 text-black leading-tight">
+
                         {product.name}
+
                     </h1>
 
-                    <p className="text-gray-600 text-lg mb-8">
+                    <p className="text-gray-600 text-base md:text-lg mb-8 leading-relaxed">
+
                         {product.description}
+
                     </p>
 
-                    <h2 className="text-4xl font-bold mb-8">
+                    <h2 className="text-3xl md:text-4xl font-bold mb-8 text-black">
+
                         ₹{product.price}
+
                     </h2>
 
-                    <div className="flex gap-4">
+                    <div className="flex flex-col sm:flex-row gap-4">
 
                         <button
-    onClick={() => {
+                            onClick={() => {
 
-        addToCart(product);
+                                addToCart(product);
 
-        navigate("/cart");
+                                navigate("/cart");
 
-    }}
-    className="bg-black text-white px-8 py-4 rounded-xl text-lg"
->
-    Order Now
-</button>
+                            }}
+                            className="bg-black text-white px-8 py-4 rounded-xl text-base md:text-lg font-semibold hover:opacity-90 transition"
+                        >
 
-                        <button className="border border-black px-8 py-4 rounded-xl text-lg">
-                            Inquiry
+                            Order Now
+
                         </button>
+
+                        <a
+                            href="https://wa.me/919999999999"
+                            target="_blank"
+                            rel="noreferrer"
+                            className="border border-black px-8 py-4 rounded-xl text-base md:text-lg text-center hover:bg-black hover:text-white transition"
+                        >
+
+                            Inquiry
+
+                        </a>
 
                     </div>
 

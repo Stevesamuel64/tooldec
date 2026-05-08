@@ -55,7 +55,7 @@ function Products() {
 
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+                <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-8">
 
                     {products.map((product) => (
 
@@ -68,32 +68,32 @@ function Products() {
                             <img
                                 src={product.image}
                                 alt={product.name}
-                                className="h-52 md:h-64 w-full object-cover"
+                                className="h-40 md:h-64 w-full object-cover"
                             />
 
-                            <div className="p-5 md:p-6">
+                            <div className="p-3 md:p-6">
 
-                                <h3 className="text-xl md:text-2xl font-bold mb-3 text-black">
+                                <h3 className="text-sm md:text-2xl font-bold mb-2 md:mb-3 text-black line-clamp-2">
 
                                     {product.name}
 
                                 </h3>
 
-                                <p className="text-gray-500 mb-5 leading-relaxed text-sm md:text-base line-clamp-3">
+                                <p className="hidden md:block text-gray-500 mb-5 leading-relaxed text-sm md:text-base line-clamp-3">
 
                                     {product.description}
 
                                 </p>
 
-                                <div className="flex items-center justify-between gap-3">
+                                <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-3">
 
-                                    <span className="text-black text-xl md:text-2xl font-bold">
+                                    <span className="text-black text-sm md:text-2xl font-bold">
 
                                         ₹{product.price}
 
                                     </span>
 
-                                    <button className="border border-gray-300 px-4 md:px-5 py-2 rounded-lg hover:bg-black hover:text-white transition text-sm md:text-base">
+                                    <button className="border border-gray-300 px-3 md:px-5 py-2 rounded-lg hover:bg-black hover:text-white transition text-xs md:text-base">
 
                                         View
 

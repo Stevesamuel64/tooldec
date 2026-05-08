@@ -25,7 +25,7 @@ function ProductDetails() {
         try {
 
             const res = await axios.get(
-                `http://localhost:5000/api/products/${id}`
+                `https://tooldec.onrender.com/api/products/${id}`
             );
 
             setProduct(res.data);

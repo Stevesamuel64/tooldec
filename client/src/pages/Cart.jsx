@@ -45,7 +45,7 @@ function Cart() {
     try {
 
         await axios.post(
-            "http://localhost:5000/api/orders",
+            "https://tooldec.onrender.com/api/orders",
             {
                 ...customer,
                 items: cart,
